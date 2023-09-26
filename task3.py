@@ -1,14 +1,16 @@
 from cv2 import cvtColor, COLOR_BGR2GRAY, threshold, THRESH_BINARY
 import utils
 
-def convertToBinary(img):
-    # convert to grayscale
-    img = cvtColor(img, COLOR_BGR2GRAY)
-    ret,img = threshold(img, 127, 255, THRESH_BINARY)
-    return img
+
+def convertToBinary(image):
+	# convert to grayscale
+	image = cvtColor(image, COLOR_BGR2GRAY)
+	ret, image = threshold(image, 127, 255, THRESH_BINARY)
+	return image
+
 
 # Read the image
-img = utils.readImage()
+img = utils.readImage( )
 
 # show image
 utils.showImage(img, 'Original Image')
@@ -28,5 +30,3 @@ utils.showImage(img, 'Binary Image')
 print("Image Shape: ", utils.imageShape(img))
 # Print image type
 utils.checkImageChannels(img)
-
-

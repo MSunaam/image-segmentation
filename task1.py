@@ -1,13 +1,15 @@
 from cv2 import resize
 import utils
 
-def resizeImg(img, x = 256, y=256):
-    # Resize image
-    img = resize(img, (x,y))
-    return img
+
+def resizeImg(image, x = 256, y = 256):
+	# Resize image
+	image = resize(image, (x, y))
+	return image
+
 
 # read the image
-img = utils.readImage()
+img = utils.readImage( )
 
 # Show image
 utils.showImage(img)

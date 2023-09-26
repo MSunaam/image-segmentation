@@ -1,34 +1,38 @@
 import cv2 as cv
 
-def readImage(src = 'assignment/test-image.png'):
-    # read the image
-    try:
-        img = cv.imread(src, cv.IMREAD_COLOR)
-        print('Image Loaded')
-        # showImage(img)
-    except:
-        print('Image not found')
-        exit()
 
-    return img
+def readImage(src = 'assignment/test-image.png'):
+	# read the image
+	try:
+		img = cv.imread(src, cv.IMREAD_COLOR)
+		print('Image Loaded')
+	# showImage(img)
+	except:
+		print('Image not found')
+		exit( )
+
+	return img
+
 
 def showImage(img, title = 'Image', wait = 0):
-    cv.imshow(title, img)
-    cv.waitKey(wait)
+	cv.imshow(title, img)
+	cv.waitKey(wait)
+
 
 def checkImageChannels(img):
-    # show image type
-    channels = len(img.shape)
-    print('Image Channels: ', '3' if channels == 3 else '1')
+	# show image type
+	channels = len(img.shape)
+	print('Image Channels: ', '3' if channels == 3 else '1')
 
-    if channels == 3:
-        print('Image is Colored')
-    else:
-        print('Image is Grayscale or Binary')
+	if channels == 3:
+		print('Image is Colored')
+	else:
+		print('Image is Grayscale or Binary')
 
-    return channels
+	return channels
+
 
 def imageShape(img):
-    # show image shape
-    # print('Image Shape: ', img.shape)
-    return img.shape
+	# show image shape
+	# print('Image Shape: ', img.shape)
+	return img.shape
