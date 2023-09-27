@@ -29,7 +29,6 @@ utils.showImage(edges, "Edge Image")
 
 # Get contours
 contours, hierarchy = cv.findContours(edges, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
-print(len(contours))
 
 coins = 0
 # Draw contours
